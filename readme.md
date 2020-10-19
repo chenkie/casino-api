@@ -13,10 +13,10 @@ Create a file in the `prisma` directory called `dev.db`.
 Next, install the dependencies.
 
 ```bash
-// with npm
+# with npm
 npm i
 
-// with yarn
+# with yarn
 yarn
 ```
 
