@@ -5,10 +5,12 @@ import express, {
   Response
 } from 'express';
 import jwt from 'jsonwebtoken';
+import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const prisma = new PrismaClient();
 
@@ -51,6 +53,7 @@ app.post(
 
       res.json({ user, token });
     } catch (err) {
+      console.log(err);
       res
         .status(400)
         .json({ message: 'Something went wrong' });
